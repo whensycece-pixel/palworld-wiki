@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0c24" />
+    <title>ENSAR VE YOLDAŞLARI // Palworld Saha Rehberi</title>
+    <link rel="stylesheet" href="styles.css?v=20260828t" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <div class="brand-mark"><span>⌁</span></div>
+          <div>
+            <div class="brand-name">ENSAR VE YOLDAŞLARI</div>
+            <div class="brand-sub"><span data-i18n="brandSub">SAHA REHBERİ</span> <span class="brand-dot"></span> 01</div>
+          </div>
+        </div>
+
+        <div class="sidebar-label" data-i18n="commandCenter">KOMUTA MERKEZİ</div>
+        <nav class="side-nav" aria-label="Ana navigasyon" data-i18n-aria="mainNav">
+          <button class="nav-item active" data-scroll="overview"><span class="nav-icon">◈</span> <span class="nav-label" data-i18n="overview">Genel Bakış</span> <span class="nav-count">01</span></button>
+          <button class="nav-item" data-scroll="paldeck-explorer"><span class="nav-icon">✦</span> <span class="nav-label" data-i18n="paldeck">Paldeck</span> <span class="nav-count">288</span></button>
+          <button class="nav-item" data-scroll="breeding"><span class="nav-icon">♧</span> <span class="nav-label" data-i18n="breedingLab">Üretim Lab.</span> <span class="nav-count">∞</span></button>
+          <button class="nav-item" data-scroll="eggs"><span class="nav-icon">◉</span> <span class="nav-label" data-i18n="eggAtlas">Yumurta Atlası</span> <span class="nav-count">11</span></button>
+          <button class="nav-item" data-scroll="world"><span class="nav-icon">⌖</span> <span class="nav-label" data-i18n="worldMap">Dünya Haritası</span> <span class="nav-count">64</span></button>
+          <button class="nav-item" data-scroll="capture"><span class="nav-icon">◎</span> <span class="nav-label" data-i18n="captureRate">Yakalama Oranı</span> <span class="nav-count">araç</span></button>
+          <button class="nav-item" data-scroll="tier"><span class="nav-icon">♛</span> <span class="nav-label" data-i18n="powerList">Güç Listesi</span> <span class="nav-count">S–B</span></button>
+          <button class="nav-item" data-scroll="database"><span class="nav-icon">▣</span> <span class="nav-label" data-i18n="database">Veritabanı</span> <span class="nav-count">3.1k</span></button>
+        </nav>
+
+        <div class="sidebar-label" data-i18n="quickAccess">HIZLI ERİŞİM</div>
+        <div class="quick-links">
+          <button class="quick-link" data-scroll="world"><span class="quick-glyph amber">⌁</span> <span data-i18n="fastTravelMap">Hızlı Seyahat Haritası</span></button>
+          <button class="quick-link" data-scroll="world" data-focus-layer="alpha"><span class="quick-glyph rose">✦</span> <span data-i18n="normalAlphaBosses">Normal Alpha Bossları</span></button>
+          <button class="quick-link" data-scroll="database"><span class="quick-glyph cyan">⌘</span> <span data-i18n="technologyTree">Teknoloji Ağacı</span></button>
+        </div>
+
+        <div class="sidebar-foot">
+          <div class="sync-line"><span class="sync-dot"></span> <span data-i18n="dataUpdated">VERİLER GÜNCEL</span></div>
+          <div class="sidebar-version"><span data-i18n="versionData">PALWORLD // 1.0 VERİ SETİ</span><br /><span data-i18n="checkedDate">İNCELENDİ 03 AĞU 2026</span></div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button class="mobile-menu" id="mobileMenu" aria-label="Menüyü aç" data-i18n-aria="openMenu">☰</button>
+          <div class="breadcrumb"><span>ENSAR VE YOLDAŞLARI</span><i>/</i><strong id="breadcrumbLabel" data-i18n="commandCenter">KOMUTA MERKEZİ</strong></div>
+            <div class="topbar-actions">
+            <div class="global-search small-search">
+              <span class="search-glyph">⌕</span>
+                <input id="globalSearch" type="search" placeholder="Veritabanında ara..." data-i18n-placeholder="globalSearch" autocomplete="off" />
+              <kbd>⌘ K</kbd>
+            </div>
+            <div class="language-picker" id="languagePicker">
+              <button class="language-trigger" id="languageTrigger" type="button" aria-label="Dil seç" aria-haspopup="listbox" aria-expanded="false" data-i18n-aria="languageSelect">
+                <span class="language-flag-wrap"><img class="language-flag" id="languageFlag" src="https://flagcdn.com/w40/tr.png" alt="Türkiye bayrağı" onerror="this.hidden=true;document.getElementById('languageFlagFallback').style.display='inline-grid'" /><span class="language-flag-fallback" id="languageFlagFallback" aria-hidden="true">🇹🇷</span></span>
+                <span class="language-current" id="languageCurrent">Türkçe</span><span class="language-chevron">⌄</span>
+              </button>
+              <div class="language-menu" id="languageMenu" role="listbox" aria-label="Dil seçenekleri" hidden>
+                <button class="language-option active" type="button" role="option" data-language="tr" aria-selected="true"><img src="https://flagcdn.com/w40/tr.png" alt="" /> <span>Türkçe</span></button>
+                <button class="language-option" type="button" role="option" data-language="en" aria-selected="false"><img src="https://flagcdn.com/w40/us.png" alt="" /> <span>English</span></button>
+                <button class="language-option" type="button" role="option" data-language="es" aria-selected="false"><img src="https://flagcdn.com/w40/es.png" alt="" /> <span>Español</span></button>
+                <button class="language-option" type="button" role="option" data-language="pt" aria-selected="false"><img src="https://flagcdn.com/w40/br.png" alt="" /> <span>Português</span></button>
+                <button class="language-option" type="button" role="option" data-language="de" aria-selected="false"><img src="https://flagcdn.com/w40/de.png" alt="" /> <span>Deutsch</span></button>
+                <button class="language-option" type="button" role="option" data-language="fr" aria-selected="false"><img src="https://flagcdn.com/w40/fr.png" alt="" /> <span>Français</span></button>
+                <button class="language-option" type="button" role="option" data-language="ja" aria-selected="false"><img src="https://flagcdn.com/w40/jp.png" alt="" /> <span>日本語</span></button>
+                <button class="language-option" type="button" role="option" data-language="ko" aria-selected="false"><img src="https://flagcdn.com/w40/kr.png" alt="" /> <span>한국어</span></button>
+                <button class="language-option" type="button" role="option" data-language="zh" aria-selected="false"><img src="https://flagcdn.com/w40/cn.png" alt="" /> <span>中文</span></button>
+                <button class="language-option" type="button" role="option" data-language="ru" aria-selected="false"><img src="https://flagcdn.com/w40/ru.png" alt="" /> <span>Русский</span></button>
+              </div>
+              <select id="languageSelect" aria-label="Dil seç" data-i18n-aria="languageSelect" hidden>
+                <option value="tr">Türkçe</option><option value="en">English</option><option value="es">Español</option><option value="pt">Português</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="zh">中文</option><option value="ru">Русский</option>
+              </select>
+            </div>
+            <button class="icon-button" id="themeButton" aria-label="Tema değiştir" title="Tema değiştir" data-i18n-aria="themeToggle" data-i18n-title="themeToggle">☾</button>
+            <div class="avatar">K</div>
+          </div>
+        </header>
+
+        <div class="content-wrap">
+          <section class="hero-section" id="overview">
+            <div class="hero-copy">
+              <div class="eyebrow"><span class="eyebrow-line"></span> <span data-i18n="fieldGuide">PALPAGOS ADALARI // SAHA REHBERİ</span></div>
+              <h1 data-i18n="heroTitle">Palpagos’un<br /><span>yaşayan</span> veritabanı.</h1>
+              <p class="hero-text"><span data-i18n="heroText">Palları yakala. Yumurtaları çöz. Dünyayı oku.<br />Palworld için hızlı, görsel ve gerçek bir rehber.</span></p>
+              <div class="hero-actions">
+                <button class="primary-button" data-scroll="paldeck"><span data-i18n="explorePaldeck">Paldeck’i keşfet</span><b>↗</b></button>
+                <button class="ghost-button" data-scroll="breeding"><span data-i18n="breedingLabFull">Üretim laboratuvarı</span><b>⌁</b></button>
+              </div>
+              <div class="verified-note"><span class="verified-check">✓</span> <span data-i18n="verifiedData">Palworld 1.0 verileriyle çapraz kontrol edildi</span></div>
+            </div>
+
+            <div class="hero-art" aria-label="Palworld temalı keşif illüstrasyonu" data-i18n-aria="heroArt">
+              <div class="sun-orbit"></div>
+              <div class="orbit-ring ring-one"></div>
+              <div class="orbit-ring ring-two"></div>
+              <div class="hero-grid"></div>
+              <img src="https://www.palworld-db.com/pals/JetDragon.png" alt="Jetragon" class="hero-pal" />
+              <div class="art-stamp">P-202<br /><span data-i18n="dragonElement">EJDERHA ELEMENTİ</span></div>
+              <div class="art-signal signal-a">◉ <span data-i18n="sector">SECTOR 08</span></div>
+              <div class="art-signal signal-b">+ <span data-i18n="scanReady">TARAMA HAZIR</span></div>
+              <div class="art-caption" data-i18n="artCaption">J E T R A G O N <span>•</span> AERIAL MISSILE</div>
+            </div>
+          </section>
+
+          <section class="stats-grid" aria-label="Veritabanı özeti" data-i18n-aria="statsSummary">
+            <article class="stat-card accent-lime">
+              <div class="stat-top"><span data-i18n="paldeckIndex">PALDECK İNDEKSİ</span><span class="stat-signal">↗ 12.4%</span></div>
+              <div class="stat-value">288</div>
+              <div class="stat-label" data-i18n="registeredPals">kayıtlı Pal</div>
+              <div class="micro-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </article>
+            <article class="stat-card accent-cyan">
+              <div class="stat-top"><span data-i18n="itemArchive">EŞYA ARŞİVİ</span><span class="stat-signal" data-i18n="active">AKTİF</span></div>
+              <div class="stat-value">1,891</div>
+              <div class="stat-label" data-i18n="itemsAndStructures">eşya ve yapı</div>
+              <div class="stat-progress"><span style="width: 76%"></span></div>
+            </article>
+            <article class="stat-card accent-orange">
+              <div class="stat-top"><span data-i18n="worldIntel">DÜNYA BİLGİSİ</span><span class="stat-signal" data-i18n="layers">64 KATMAN</span></div>
+              <div class="stat-value">9</div>
+              <div class="stat-label" data-i18n="towerBossesTracked">kule bossu takipte</div>
+              <div class="mini-route"><span class="route-pip done"></span><span></span><span class="route-pip done"></span><span></span><span class="route-pip current"></span><span></span><span class="route-pip"></span><span></span><span class="route-pip"></span></div>
+            </article>
+            <article class="stat-card accent-rose">
+              <div class="stat-top"><span data-i18n="eggAtlas">YUMURTA ATLASI</span><span class="stat-signal" data-i18n="families">11 AİLE</span></div>
+              <div class="stat-value">11</div>
+              <div class="stat-label" data-i18n="eggFamiliesCount">yumurta ailesi</div>
+              <div class="egg-dots"><i class="egg-dot common"></i><i class="egg-dot fire"></i><i class="egg-dot water"></i><i class="egg-dot grass"></i><i class="egg-dot electric"></i><i class="egg-dot ice"></i><i class="egg-dot ground"></i><i class="egg-dot dark"></i><i class="egg-dot dragon"></i></div>
+            </article>
+          </section>
+
+          <section class="feature-grid" id="paldeck">
+            <article class="feature-card featured-pal-card">
+              <div class="card-kicker"><span data-i18n="featuredPal">ÖNE ÇIKAN PAL</span> <span>//</span> <span data-i18n="fieldRecord">SAHA KAYDI 202</span></div>
+              <div class="featured-inner">
+                <div class="featured-copy">
+                  <div class="pal-number">#202</div>
+                  <h2>Jetragon</h2>
+                  <div class="type-chip dragon-chip"><span class="type-icon">✧</span> <span data-i18n="dragon">DRAGON</span></div>
+                  <p class="featured-desc" data-i18n="jetragonDescription">Palpagos’un en hızlı uçan mount’larından biri. Rocket Launcher partner skill’i ile yüksek hızda havadan saldırı.</p>
+                  <div class="featured-meta"><span><b data-i18n="rarity">Nadirlik</b> 20</span><span><b data-i18n="partner">Partner</b> Aerial Missile</span></div>
+                  <button class="text-button" data-pal="Jetragon"><span data-i18n="fullFieldRecord">Tam saha kaydı</span> <span>↗</span></button>
+                </div>
+                <div class="featured-visual">
+                  <div class="featured-ring"></div>
+                  <img src="https://www.palworld-db.com/pals/JetDragon.png" alt="Jetragon" />
+                  <div class="visual-label label-top"><span data-i18n="airUnit">HAVA BİRLİĞİ</span> <span>09</span></div>
+                  <div class="visual-label label-bottom" data-i18n="scanned">TARANDI // 99.8%</div>
+                </div>
+              </div>
+              <div class="card-footer-line"><span data-i18n="dragonDamage">EJDERHA HASARI</span><div class="power-bar"><i style="width: 88%"></i></div><strong>+30%</strong></div>
+            </article>
+
+            <article class="feature-card type-chart-card">
+              <div class="card-kicker"><span data-i18n="elementTable">ELEMENT TABLOSU</span> <span>//</span> <span data-i18n="combatLogic">SAVAŞ MANTIĞI</span></div>
+              <div class="chart-title-row"><h3 data-i18n="elementMatchups">Element eşleşmeleri</h3><span class="chart-legend"><i class="legend-dot super"></i> <span data-i18n="strong">güçlü</span> <i class="legend-dot weak"></i> <span data-i18n="weak">zayıf</span></span></div>
+              <div class="type-matrix">
+                <div class="matrix-row matrix-head"><span></span><b data-i18n="fire">FIRE</b><b data-i18n="water">WATER</b><b data-i18n="grass">GRASS</b><b data-i18n="electric">ELECTRIC</b><b data-i18n="ice">ICE</b></div>
+                <div class="matrix-row"><strong data-i18n="fire">FIRE</strong><span class="cell neutral">—</span><span class="cell weak">×</span><span class="cell super">×2</span><span class="cell neutral">—</span><span class="cell super">×2</span></div>
+                <div class="matrix-row"><strong data-i18n="water">WATER</strong><span class="cell super">×2</span><span class="cell neutral">—</span><span class="cell weak">×</span><span class="cell weak">×</span><span class="cell neutral">—</span></div>
+                <div class="matrix-row"><strong data-i18n="grass">GRASS</strong><span class="cell weak">×</span><span class="cell super">×2</span><span class="cell neutral">—</span><span class="cell neutral">—</span><span class="cell weak">×</span></div>
+                <div class="matrix-row"><strong data-i18n="electric">ELECTRIC</strong><span class="cell neutral">—</span><span class="cell super">×2</span><span class="cell weak">×</span><span class="cell neutral">—</span><span class="cell neutral">—</span></div>
+                <div class="matrix-row"><strong data-i18n="ice">ICE</strong><span class="cell weak">×</span><span class="cell neutral">—</span><span class="cell super">×2</span><span class="cell neutral">—</span><span class="cell neutral">—</span></div>
+              </div>
+              <div class="matrix-foot" data-i18n="damageBonus">Hasar bonusu Palworld element avantajı mantığını izler.</div>
+            </article>
+          </section>
+
+          <section class="section-block" id="paldeck-explorer">
+            <div class="section-heading">
+              <div><div class="section-kicker">01 <span>//</span> <span data-i18n="paldeckSection">PALDECK</span></div><h2 data-i18n="paldeckExplorer">Paldeck Gezgini</h2></div>
+              <button class="outline-button" data-toast-key="recordsIndexed"><span data-i18n="viewAllRecords">Tüm 288 kaydı gör</span> <span>↗</span></button>
+            </div>
+            <div class="filter-row">
+              <div class="filter-group" id="elementFilters">
+                <button class="filter-pill active" data-element="all" data-i18n="allPals">Tüm Pallar</button>
+                <button class="filter-pill" data-element="fire"><i class="filter-icon fire"></i> <span data-i18n="fire">Ateş</span></button>
+                <button class="filter-pill" data-element="water"><i class="filter-icon water"></i> <span data-i18n="water">Su</span></button>
+                <button class="filter-pill" data-element="grass"><i class="filter-icon grass"></i> <span data-i18n="grass">Çim</span></button>
+                <button class="filter-pill" data-element="electric"><i class="filter-icon electric"></i> <span data-i18n="electric">Elektrik</span></button>
+                <button class="filter-pill" data-element="ice"><i class="filter-icon ice"></i> <span data-i18n="ice">Buz</span></button>
+                <button class="filter-pill" data-element="ground"><i class="filter-icon ground"></i> <span data-i18n="ground">Toprak</span></button>
+                <button class="filter-pill" data-element="dark"><i class="filter-icon dark"></i> <span data-i18n="dark">Karanlık</span></button>
+                <button class="filter-pill" data-element="dragon"><i class="filter-icon dragon"></i> <span data-i18n="dragon">Ejderha</span></button>
+              </div>
+              <div class="result-count" id="palResultCount">8 results</div>
+            </div>
+            <div class="pal-grid" id="palGrid"></div>
+          </section>
+
+          <section class="split-section" id="breeding">
+            <article class="dark-panel breeding-panel">
+              <div class="section-kicker">02 <span>//</span> <span data-i18n="breedingSection">ÜRETİM LABI</span></div>
+              <div class="panel-heading"><div><h2 data-i18n="breedingTitle">Hangi çift, hangi Pal?</h2><p data-i18n="breedingIntro">Ebeveynleri seç, sonucu gör ve üretim zincirini kur.</p></div><div class="lab-orb">♧</div></div>
+              <div class="lab-statusline"><span class="lab-live"><i></i> <span data-i18n="labActive">LAB AKTİF</span></span><span data-i18n="palPool">288 PAL HAVUZU</span><span data-i18n="specialVariants">ÖZEL VARYANTLAR</span></div>
+              <div class="breeding-mode-tabs" role="tablist" aria-label="Breeding modu" data-i18n-aria="breedingMode">
+                <button class="breeding-mode-tab active" data-breed-mode="pair" role="tab" aria-selected="true" data-i18n="pairToResult">Çift → sonuç</button>
+                <button class="breeding-mode-tab" data-breed-mode="result" role="tab" aria-selected="false" data-i18n="resultToParents">Pal → ebeveyn çiftleri</button>
+              </div>
+              <div id="breedPairPanel">
+                <div class="breeding-form">
+                  <div class="breed-visual-parent"><span class="breed-visual-label" data-i18n="parent01">PARENT 01</span><button class="breed-visual-select active" id="breedVisualParentA" data-visual-slot="a" type="button"><span class="breed-visual-avatar" id="breedVisualAvatarA"></span><span class="breed-visual-copy" id="breedVisualCopyA"></span><b>⌄</b></button><label class="breed-native-select"><span data-i18n="parent01">Parent 01</span> <select id="parentA"></select></label></div>
+                  <div class="breed-plus">+</div>
+                  <div class="breed-visual-parent"><span class="breed-visual-label" data-i18n="parent02">PARENT 02</span><button class="breed-visual-select" id="breedVisualParentB" data-visual-slot="b" type="button"><span class="breed-visual-avatar" id="breedVisualAvatarB"></span><span class="breed-visual-copy" id="breedVisualCopyB"></span><b>⌄</b></button><label class="breed-native-select"><span data-i18n="parent02">Parent 02</span> <select id="parentB"></select></label></div>
+                </div>
+                <div class="breed-output" id="breedOutput" aria-live="polite"></div>
+                <div class="breed-directory" id="breedDirectory">
+                  <div class="breed-directory-head"><div><span data-i18n="palArchive">PAL ARŞİVİ // 288 KAYIT</span><h3 data-i18n="visualPalPicker">Görselli Pal seçici</h3><p data-i18n="visualPalPickerHint">Bir ebeveyn kutusunu seç, sonra aşağıdaki Pal kartına tıkla.</p></div><strong id="breedDirectoryCount">288 PAL</strong></div>
+                  <div class="breed-directory-controls">
+                    <div class="breed-directory-slots"><button class="breed-directory-slot active" id="breedDirectorySlotA" data-directory-slot="a" type="button"><span>01</span><div><small data-i18n="activeParent">AKTİF EBEVEYN</small><strong id="breedDirectoryNameA">Lamball</strong></div></button><button class="breed-directory-slot" id="breedDirectorySlotB" data-directory-slot="b" type="button"><span>02</span><div><small data-i18n="secondParent">İKİNCİ EBEVEYN</small><strong id="breedDirectoryNameB">Vixy</strong></div></button></div>
+                    <label class="breed-directory-search"><span>⌕</span><input id="breedDirectorySearch" type="search" placeholder="Tüm Pallar içinde ara..." data-i18n-placeholder="palSearch" autocomplete="off" /></label>
+                  </div>
+                    <div class="breed-directory-filters" role="group" aria-label="Pal elementi filtreleri" data-i18n-aria="palElementFilters"><button class="active" type="button" data-directory-element="all" data-i18n="all">HEPSİ</button><button type="button" data-directory-element="neutral" data-i18n="neutral">NÖTR</button><button type="button" data-directory-element="fire" data-i18n="fire">ATEŞ</button><button type="button" data-directory-element="water" data-i18n="water">SU</button><button type="button" data-directory-element="grass" data-i18n="grass">ÇİM</button><button type="button" data-directory-element="electric" data-i18n="electric">ELEKTRİK</button><button type="button" data-directory-element="ice" data-i18n="ice">BUZ</button><button type="button" data-directory-element="ground" data-i18n="ground">TOPRAK</button><button type="button" data-directory-element="dark" data-i18n="dark">KARANLIK</button><button type="button" data-directory-element="dragon" data-i18n="dragon">EJDERHA</button></div>
+                    <div class="breed-directory-grid" id="breedDirectoryGrid" aria-label="Tüm Pal kartları" data-i18n-aria="allPalCards"></div>
+                </div>
+                <div class="breed-flow" aria-label="Palworld üretim akışı" data-i18n-aria="breedingFlow">
+                  <button class="breed-flow-step" type="button" data-toast-key="farmToast"><span class="breed-step-no">01</span><span><b data-i18n="farm">ÇİFTLİK</b><small data-i18n="chooseMaleFemale">♂ + ♀ seç</small></span><em>↗</em></button>
+                  <span class="breed-flow-line"></span>
+                  <button class="breed-flow-step" type="button" data-toast-key="cakeToast"><span class="breed-step-no">02</span><span><b data-i18n="cake">PASTA</b><small data-i18n="prepareRecipe">tarifi hazırla</small></span><em>↗</em></button>
+                  <span class="breed-flow-line"></span>
+                  <button class="breed-flow-step" type="button" data-scroll="eggs"><span class="breed-step-no">03</span><span><b data-i18n="egg">YUMURTA</b><small data-i18n="incubate">kuluçkaya al</small></span><em>↗</em></button>
+                </div>
+              </div>
+              <div class="breed-reverse-panel" id="breedResultPanel" hidden>
+                <label class="breed-result-select-label"><span data-i18n="resultPal">Sonuç Pal</span> <select id="breedResultPal"></select></label>
+                <div class="breed-reverse-output" id="reverseBreedOutput" aria-live="polite"></div>
+              </div>
+              <div class="breeding-rules"><span>01</span> <span data-i18n="oppositeSex">zıt cinsiyet</span> <span>02</span> <span data-i18n="breedingFarm">üretim çiftliği</span> <span>03</span> <span data-i18n="cake">pasta</span> <span>04</span> <span data-i18n="incubator">kuluçka makinesi</span></div>
+              <div class="lab-footnote"><span data-i18n="breedingLogic">PALWORLD ÜRETİM MANTIĞI</span><b data-i18n="breedingPowerHint">Sonuçlar ebeveynlerin breeding power ortalamasına göre hesaplanır.</b></div>
+            </article>
+            <article class="dark-panel breeding-tip">
+              <div class="section-kicker orange-kicker"><span data-i18n="fieldNote">SAHA NOTU</span> <span>//</span> ÜRETİM 101</div>
+              <div class="tip-illustration"><div class="tip-egg egg-visual dragon"></div><span>+</span><div class="tip-egg egg-visual common"></div><span>=</span><div class="tip-egg egg-visual grass"></div></div>
+              <h3 data-i18n="eggColorSize">Yumurtanın rengi elementi, boyutu ise nadirlik/grade’i gösterir.</h3>
+              <p data-i18n="breedingTip">Çiftin sonucu Palworld’ün breeding power formülüyle belirlenir; aynı türü eşleştirmek sonucu garanti eder.</p>
+              <div class="breeding-tip-stats"><div><strong>♂♀</strong><span>Zıt cinsiyet</span></div><div><strong>1</strong><span>Yumurta</span></div><div><strong>∞</strong><span>Zincir</span></div></div>
+              <button class="text-button" data-scroll="eggs"><span data-i18n="goToEggAtlas">Yumurta atlasına git</span> <span>↗</span></button>
+            </article>
+          </section>
+
+          <section class="section-block" id="eggs">
+            <div class="section-heading">
+              <div><div class="section-kicker">03 <span>//</span> <span data-i18n="eggSection">YUMURTA ATLASI</span></div><h2 data-i18n="eggFamilies">Palworld yumurta aileleri</h2></div>
+              <div class="mini-note"><span class="live-dot"></span> <span data-i18n="eggColorHint">renkler elementleri gösterir</span></div>
+            </div>
+            <div class="egg-grid" id="eggGrid"></div>
+          </section>
+
+          <section class="world-section" id="world">
+            <div class="section-heading">
+              <div><div class="section-kicker">04 <span>//</span> <span data-i18n="worldSection">DÜNYA BİLGİSİ</span></div><h2 data-i18n="worldBoard">Palpagos rota panosu</h2></div>
+              <div class="map-heading-tools"><div class="map-region-switcher" role="tablist" aria-label="Harita bölgesi"><button class="map-region-tab active" type="button" role="tab" aria-selected="true" data-map-region="palpagos">🏝️ <span>Palpagos</span></button><button class="map-region-tab" type="button" role="tab" aria-selected="false" data-map-region="worldtree">🌳 <span>World Tree</span></button></div><div class="map-toggles"><button class="map-toggle active" data-layer="towers">♜ <span data-i18n="towerBosses">Kule bossları</span></button><button class="map-toggle active" data-layer="alpha">✦ <span data-i18n="normalAlpha">Normal Alpha</span></button><button class="map-toggle active" data-layer="travel">⌖ <span data-i18n="fastTravel">Hızlı seyahat</span></button></div></div>
+            </div>
+            <div class="world-grid">
+              <div class="map-card">
+                <div class="map-viewport" id="mapViewport" aria-label="Yakınlaştırılabilir ve kaydırılabilir Palpagos haritası" data-i18n-aria="heroMap">
+                  <div class="map-canvas" id="mapCanvas">
+                    <div class="map-tile-layer" id="mapTileLayer" aria-hidden="true"></div>
+                    <img id="worldMapImage" src="https://palworld-db.com/worldmap.webp" alt="Palpagos Islands map" class="world-map-image" loading="eager" decoding="async" fetchpriority="high" />
+                    <div class="map-vignette"></div>
+                    <div id="mapPinLayer"></div>
+                  </div>
+                </div>
+                <div class="map-overlay-top"><span class="map-coords" id="mapCoordsLabel" data-i18n="gridPalpagos">IZGARA 04 · PALPAGOS</span><span class="map-live"><i></i> <span data-i18n="coordinatesActive">KOORDİNATLAR AKTİF</span></span></div>
+                <div class="map-toolbar" aria-label="Harita kontrolleri" data-i18n-aria="mapControls"><span class="map-quality-badge" id="mapQualityBadge">2K HD TILE · 2.5×</span><button id="mapZoomOut" type="button" aria-label="Haritayı uzaklaştır" data-i18n-aria="zoomOut">−</button><output id="mapZoomValue">100%</output><button id="mapZoomIn" type="button" aria-label="Haritayı yakınlaştır" data-i18n-aria="zoomIn">+</button><button id="mapReset" type="button" aria-label="Haritayı sıfırla" data-i18n="reset">Sıfırla</button></div>
+                <div class="boss-hover-card" id="bossHoverCard" aria-live="polite" aria-hidden="true"></div>
+                <div class="map-legend"><span><i class="legend-symbol tower-symbol">♜</i> <span data-i18n="towerBoss">KULE BOSSU</span></span><span><i class="legend-symbol alpha-symbol">✦</i> <span data-i18n="normalAlpha">NORMAL ALPHA</span></span><span><i class="legend-symbol travel-symbol">⌖</i> <span data-i18n="fastTravel">HIZLI SEYAHAT</span></span></div>
+              </div>
+              <div class="world-list-panel">
+                <div class="list-panel-head"><div><span class="list-title" id="worldListTitle" data-i18n="towerProgress">Kule ilerleyişi</span><small id="worldListSubtitle" data-i18n="weakToStrong">zayıftan → güçlüye</small></div><span class="list-status" id="worldListStatus">9 / 9</span></div>
+                <div class="world-list-tabs"><button class="world-list-tab active" data-list="towers" data-i18n="towers">Kuleler</button><button class="world-list-tab" data-list="alpha" data-i18n="normalAlpha">Normal Alpha</button></div>
+                <div class="tower-list" id="towerList"></div>
+                <div class="alpha-list" id="alphaList" hidden></div>
+                <button class="wide-outline" data-toast-key="mapLayersToast"><span data-i18n="openMapLayers">Tam harita katmanını aç</span> <span>↗</span></button>
+              </div>
+            </div>
+          </section>
+
+          <section class="section-block" id="database">
+            <div class="section-heading">
+              <div><div class="section-kicker">05 <span>//</span> <span data-i18n="databaseSection">VERİTABANI</span></div><h2 data-i18n="equipmentArchive">Ekipman arşivi</h2></div>
+              <div class="db-status"><span class="live-dot"></span> <span id="dbStatusText" data-i18n="recordsPreparing">Palworld kayıtları hazırlanıyor</span></div>
+            </div>
+            <div class="db-tabs" role="tablist">
+              <button class="db-tab active" data-db="items"><span data-i18n="allItems">Tüm eşyalar</span> <span id="dbCountItems">0</span></button>
+              <button class="db-tab" data-db="weapons"><span data-i18n="weapons">Silahlar</span> <span id="dbCountWeapons">0</span></button>
+              <button class="db-tab" data-db="armor"><span data-i18n="armorShield">Zırh ve kalkan</span> <span id="dbCountArmor">0</span></button>
+              <button class="db-tab" data-db="technology"><span data-i18n="technology">Teknoloji</span> <span id="dbCountTechnology">0</span></button>
+            </div>
+            <div class="db-toolbar"><label class="db-search"><span>⌕</span><input id="dbSearch" type="search" placeholder="Ekipman adı veya kayıt kodu ara..." data-i18n-placeholder="equipmentSearch" autocomplete="off" /></label><span class="db-page-count" id="dbPageCount"></span></div>
+            <div class="database-content" id="databaseContent"></div>
+                <div class="db-pagination"><button id="dbPrev" type="button" data-i18n="previous">← Önceki</button><span id="dbPageInfo" data-i18n="pageOne">Sayfa 1</span><button id="dbNext" type="button" data-i18n="next">Sonraki →</button></div>
+          </section>
+
+          <section class="split-section tools-section" id="capture">
+            <article class="dark-panel capture-panel">
+              <div class="section-kicker">06 <span>//</span> <span data-i18n="captureSection">CAPTURE RATE</span></div>
+              <div class="panel-heading"><div><h2 data-i18n="captureTitle">Yakalama oranı</h2><p data-i18n="captureIntro">Oyundaki küre gücü + can + Capture Power hesabını gör.</p></div><div class="capture-orb">◎</div></div>
+              <div class="capture-form">
+                <label><span data-i18n="pal">Pal</span> <select id="capturePal"></select></label>
+                <label><span data-i18n="spherePower">Küre gücü</span> <select id="captureSphere"><option value="7">Pal Sphere · 7</option><option value="14">Mega Sphere · 14</option><option value="20">Giga Sphere · 20</option><option value="27">Hyper Sphere · 27</option><option value="33">Ultra Sphere · 33</option><option value="38">Legendary Sphere · 38</option><option value="44">Ultimate Sphere · 44</option><option value="50">Exotic Sphere · 50</option><option value="58">Sol Sphere · 58</option><option value="64">Ancient Sphere · 64</option><option value="0" disabled>Raider Sphere · henüz elde edilemez</option></select></label>
+                <label><span data-i18n="palLevel">Pal seviyesi</span> <output id="captureLevelValue">Lv 30</output><input id="captureLevel" type="number" min="1" max="65" value="30" /></label>
+                <label><span data-i18n="palHp">Pal canı</span> <output id="hpValue">%25</output><input id="hpRange" type="range" min="5" max="100" value="25" /></label>
+                <label><span data-i18n="effigy">Effigy</span> <output id="effigyValue">Lv 3</output><input id="effigyRange" type="range" min="0" max="10" value="3" /></label>
+                <label><span data-i18n="status">Durum</span> <select id="captureStatus"><option value="healthy" data-i18n="normal">Normal</option><option value="ailment" data-i18n="statusEffect">Durum etkisi · ×1.30</option><option value="sleep" data-i18n="sleep">Uyku · ×1.35</option></select></label>
+                <label class="capture-check"><input id="captureBack" type="checkbox" /> <span data-i18n="backShot">Arkadan atış · geri kaçış avantajı</span></label>
+                <label class="capture-check"><input id="captureAlpha" type="checkbox" /> <span data-i18n="alphaBossPenalty">Alpha / boss · ×0.70</span></label>
+                <button class="breed-button" id="captureButton"><span data-i18n="calculateRate">Oranı hesapla</span> <span>↗</span></button>
+              </div>
+              <div class="capture-result" id="captureResult" aria-live="polite"></div>
+              <div class="capture-disclaimer" data-i18n="captureDisclaimer">v1.0 tersine mühendislik formülü: Capture Power = küre gücü + Effigy × 0,5. Reticle değeri oyun ekranındaki yüzdedir; gerçek atış olasılığı farklıdır. Pocketpair tam formülü yayımlamadı.</div>
+            </article>
+            <article class="dark-panel capture-note">
+              <div class="section-kicker orange-kicker"><span data-i18n="fieldNote">SAHA NOTU</span> <span>//</span> <span data-i18n="capture">YAKALAMA</span></div>
+              <div class="capture-rings"><span data-i18n="can">CAN</span><i></i><span data-i18n="effigyShort">EFFIGY</span><i></i><span data-i18n="backAttack">ARKADAN AT</span></div>
+              <h3 data-i18n="captureTipTitle">Canı azalt, arkadan at, doğru küreyi seç.</h3>
+              <p data-i18n="captureTip">Türün capture modifier’ı her Pal için farklıdır. Legendary Sphere her zaman otomatik başarı anlamına gelmez.</p>
+              <button class="text-button" data-toast-key="approxToast"><span data-i18n="whyApproximate">Neden yaklaşık?</span> <span>↗</span></button>
+            </article>
+          </section>
+
+          <section class="section-block tier-section" id="tier">
+            <div class="section-heading">
+              <div><div class="section-kicker">07 <span>//</span> <span data-i18n="tierSection">TIER LIST</span></div><h2 data-i18n="strongestPals">En güçlü Pallar</h2></div>
+              <div class="mini-note"><span class="live-dot"></span> <span data-i18n="tierNote">tüm Paldeck · rol bazlı değerlendirme</span></div>
+            </div>
+              <div class="tier-filter-row"><div class="tier-filters"><button class="tier-filter active" data-tier="all" data-i18n="all">Tümü</button><button class="tier-filter" data-tier="S">S</button><button class="tier-filter" data-tier="A">A</button><button class="tier-filter" data-tier="B">B</button><button class="tier-filter" data-tier="C">C</button><button class="tier-filter" data-tier="D">D</button></div><span class="result-count" id="tierResultCount">288 Pal</span></div>
+            <div class="tier-layout"><div class="tier-list" id="tierList"></div><aside class="tier-aside"><div class="tier-aside-mark">♛</div><span data-i18n="howToRead">NASIL OKUNUR?</span><h3 data-i18n="sRank">S = oyun sonu gücü</h3><p data-i18n="tierAside">Savaş, binek ve üs işlerinde farklı Pal’lar öne çıkar. Liste rol bazlı okunur.</p><div class="tier-meter"><i></i><i></i><i></i><i></i><i></i></div></aside></div>
+          </section>
+
+          <footer class="site-footer">
+            <div class="footer-brand"><span class="footer-mark">⌁</span><div><strong>ENSAR VE YOLDAŞLARI</strong><small data-i18n="footerGuide">PALWORLD SAHA REHBERİ</small></div></div>
+            <div class="footer-disclaimer" data-i18n="footerDisclaimer">Resmî olmayan hayran referansı. Palworld ve tüm ilişkili isimler Pocketpair Inc. ticari markalarıdır.</div>
+            <div class="footer-source"><span data-i18n="dataSources">VERİ KAYNAKLARI</span> <span>palworld.wiki.gg · palworld-db.com · palpedia.world</span></div>
+          </footer>
+        </div>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+      <section class="detail-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" id="modalClose" aria-label="Kapat" data-i18n-aria="close">×</button>
+        <div id="modalContent"></div>
+      </section>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+
+    <script src="equipment-data.js?v=20260828p"></script>
+    <script src="pal-work-data.js?v=20260904a"></script>
+    <script src="app.js?v=20260904a"></script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+.git/
+.wrangler/
+work/
+outputs/
+node_modules/
+wrangler.jsonc
+README-CLOUDFLARE.md
