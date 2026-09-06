@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0b0c24" />
     <title>ENSAR VE YOLDAŞLARI // Palworld Saha Rehberi</title>
-    <link rel="stylesheet" href="styles.css?v=20260828t" />
+    <link rel="stylesheet" href="styles.css?v=20260906a" />
   </head>
   <body>
     <div class="app-shell">
@@ -22,6 +22,7 @@
         <nav class="side-nav" aria-label="Ana navigasyon" data-i18n-aria="mainNav">
           <button class="nav-item active" data-scroll="overview"><span class="nav-icon">◈</span> <span class="nav-label" data-i18n="overview">Genel Bakış</span> <span class="nav-count">01</span></button>
           <button class="nav-item" data-scroll="paldeck-explorer"><span class="nav-icon">✦</span> <span class="nav-label" data-i18n="paldeck">Paldeck</span> <span class="nav-count">288</span></button>
+          <button class="nav-item" data-scroll="habitatFinder"><span class="nav-icon">◌</span> <span class="nav-label" data-habitat-i18n="habitatFinder">Habitat Bulucu</span> <span class="nav-count">288</span></button>
           <button class="nav-item" data-scroll="breeding"><span class="nav-icon">♧</span> <span class="nav-label" data-i18n="breedingLab">Üretim Lab.</span> <span class="nav-count">∞</span></button>
           <button class="nav-item" data-scroll="eggs"><span class="nav-icon">◉</span> <span class="nav-label" data-i18n="eggAtlas">Yumurta Atlası</span> <span class="nav-count">11</span></button>
           <button class="nav-item" data-scroll="world"><span class="nav-icon">⌖</span> <span class="nav-label" data-i18n="worldMap">Dünya Haritası</span> <span class="nav-count">64</span></button>
@@ -188,7 +189,42 @@
               </div>
               <div class="result-count" id="palResultCount">8 results</div>
             </div>
-            <div class="pal-grid" id="palGrid"></div>
+           <div class="pal-grid" id="palGrid"></div>
+          </section>
+
+          <section class="section-block habitat-section" id="habitatFinder">
+            <div class="section-heading">
+              <div><div class="section-kicker"><span data-habitat-i18n="habitatFinder">HABİTAT BULUCU</span> <span>//</span> HARİTA</div><h2 data-habitat-i18n="habitatTitle">Pallar nerede yaşar?</h2></div>
+              <div class="mini-note"><span class="live-dot"></span> <span data-habitat-i18n="habitatDataNote">Palworld 1.0.1 dağılım verisi</span></div>
+            </div>
+            <div class="habitat-browser-simple">
+              <aside class="habitat-index-simple" aria-label="Pal habitat seçici" data-habitat-aria="habitatPicker">
+                <div class="habitat-mode-row">
+                  <button class="habitat-mode-btn active" type="button" data-habitat-time="d"><span>☀</span> <span data-habitat-i18n="daytime">Gündüz</span></button>
+                  <button class="habitat-mode-btn" type="button" data-habitat-time="n"><span>☾</span> <span data-habitat-i18n="nighttime">Gece</span></button>
+                </div>
+                <label class="habitat-search-simple"><span>⌕</span><input id="habitatSearch" type="search" placeholder="Pal ara veya numara yaz..." data-habitat-placeholder="habitatSearch" autocomplete="off" /></label>
+                <select class="habitat-region-select" id="habitatRegionFilter" aria-label="Harita bölgesi" data-habitat-aria="habitatRegionFilter">
+                  <option value="all" data-habitat-i18n="allHabitats">Tüm haritalar</option>
+                  <option value="m" data-habitat-i18n="mainMap">Ana harita</option>
+                  <option value="t" data-habitat-i18n="worldTreeMap">World Tree</option>
+                  <option value="tonly" data-habitat-i18n="worldTreeOnly">Sadece World Tree</option>
+                </select>
+                <div class="habitat-list-head"><strong data-habitat-i18n="allPals">Tüm Pallar</strong><span id="habitatListCount">288 / 288</span></div>
+                <div class="habitat-pal-list-simple" id="habitatPalList"></div>
+              </aside>
+              <div class="habitat-stage-simple">
+                <div class="habitat-selected-simple"><img id="habitatSelectedIcon" alt="" /><div><strong id="habitatSelectedName">Lamball</strong><span id="habitatSelectedMeta">#001 · Habitat verisi</span></div><button type="button" class="habitat-open-pal" id="habitatOpenPal"><span data-habitat-i18n="openPalRecord">Pal kaydını aç</span> ↗</button></div>
+                <div class="habitat-map-options-simple"><div class="habitat-map-tabs-simple"><button type="button" class="habitat-map-btn active" data-habitat-map="m"><span>🏝️</span> <span data-habitat-i18n="mainMap">Ana harita</span></button><button type="button" class="habitat-map-btn" data-habitat-map="t"><span>🌳</span> <span data-habitat-i18n="worldTreeMap">World Tree</span></button></div><span id="habitatMapSummary">Habitat noktaları yükleniyor…</span></div>
+                <div class="habitat-map-frame-simple" id="habitatMapFrame">
+                  <div class="habitat-map-viewport-simple" id="habitatMapViewport"><img id="habitatMapImage" alt="Palworld habitat haritası" draggable="false" /><canvas id="habitatCanvas" aria-hidden="true"></canvas></div>
+                  <div class="habitat-map-message-simple" id="habitatMapMessage" aria-live="polite"></div>
+                  <div class="habitat-map-zoom-simple"><button type="button" id="habitatZoomOut" aria-label="Haritayı uzaklaştır">−</button><output id="habitatZoomLevel">100%</output><button type="button" id="habitatZoomIn" aria-label="Haritayı yakınlaştır">+</button><button type="button" id="habitatZoomReset" data-i18n="reset">Sıfırla</button></div>
+                </div>
+                <div class="habitat-info-strip"><div><span>☀</span><strong data-habitat-i18n="daytime">Gündüz</strong><b id="habitatDayCount">—</b></div><div><span>☾</span><strong data-habitat-i18n="nighttime">Gece</strong><b id="habitatNightCount">—</b></div><div class="habitat-regions-copy"><strong data-habitat-i18n="habitats">Habitatlar</strong><span id="habitatRegions">—</span></div></div>
+                <p class="habitat-footnote" data-habitat-i18n="habitatFootnote">Parlak bölgeler oyundaki Paldeck dağılım noktalarını gösterir. Bazı raid, boss ve breeding-only Palların vahşi habitatı yoktur.</p>
+              </div>
+            </div>
           </section>
 
           <section class="split-section" id="breeding">
@@ -350,6 +386,9 @@
 
     <script src="equipment-data.js?v=20260828p"></script>
     <script src="pal-work-data.js?v=20260904a"></script>
-    <script src="app.js?v=20260904a"></script>
+    <script src="pal-habitat-regions.js?v=20260906a"></script>
+    <script src="https://pal-kit.com/pals.js?v=1.0.1"></script>
+    <script src="https://pal-kit.com/habitats.js?v=1.0.1"></script>
+    <script src="app.js?v=20260906a"></script>
   </body>
 </html>
