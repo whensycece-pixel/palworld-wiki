@@ -217,7 +217,7 @@
                 <div class="habitat-selected-simple"><img id="habitatSelectedIcon" alt="" /><div><strong id="habitatSelectedName">Lamball</strong><span id="habitatSelectedMeta">#001 · Habitat verisi</span></div><button type="button" class="habitat-open-pal" id="habitatOpenPal"><span data-habitat-i18n="openPalRecord">Pal kaydını aç</span> ↗</button></div>
                 <div class="habitat-map-options-simple"><div class="habitat-map-tabs-simple"><button type="button" class="habitat-map-btn active" data-habitat-map="m"><span>🏝️</span> <span data-habitat-i18n="mainMap">Ana harita</span></button><button type="button" class="habitat-map-btn" data-habitat-map="t"><span>🌳</span> <span data-habitat-i18n="worldTreeMap">World Tree</span></button></div><span id="habitatMapSummary">Habitat noktaları yükleniyor…</span></div>
                 <div class="habitat-map-frame-simple" id="habitatMapFrame">
-                  <div class="habitat-map-viewport-simple" id="habitatMapViewport"><img id="habitatMapImage" alt="Palworld habitat haritası" draggable="false" /><canvas id="habitatCanvas" aria-hidden="true"></canvas></div>
+                  <div class="habitat-map-viewport-simple" id="habitatMapViewport"><img id="habitatMapImage" alt="Palworld habitat haritası" loading="eager" decoding="async" fetchpriority="high" draggable="false" /><canvas id="habitatCanvas" aria-hidden="true"></canvas></div>
                   <div class="habitat-map-message-simple" id="habitatMapMessage" aria-live="polite"></div>
                   <div class="habitat-map-zoom-simple"><button type="button" id="habitatZoomOut" aria-label="Haritayı uzaklaştır">−</button><output id="habitatZoomLevel">100%</output><button type="button" id="habitatZoomIn" aria-label="Haritayı yakınlaştır">+</button><button type="button" id="habitatZoomReset" data-i18n="reset">Sıfırla</button></div>
                 </div>
@@ -386,9 +386,9 @@
 
     <script src="equipment-data.js?v=20260828p"></script>
     <script src="pal-work-data.js?v=20260904a"></script>
-    <script src="pal-habitat-regions.js?v=20260906a"></script>
+    <script src="pal-habitat-regions.js?v=20260906b"></script>
     <script src="https://pal-kit.com/pals.js?v=1.0.1"></script>
     <script src="https://pal-kit.com/habitats.js?v=1.0.1"></script>
-    <script src="app.js?v=20260906a"></script>
+    <script src="app.js?v=20260906b"></script>
   </body>
 </html>
